@@ -1,4 +1,4 @@
-import { ApolloCLient, InMemoryCache, HttpLink } from 'apollo-boost'
+import { ApolloClient, InMemoryCache, HttpLink } from 'apollo-boost'
 import fetch from 'isomorphic-unfetch'
 
 let apolloClient = null
@@ -7,7 +7,7 @@ function create(initialState){
   
   const isBrowser = typeof window !== 'undefined'
 
-  return new ApolloCLient({
+  return new ApolloClient({
     connectToDvTools: isBrowser,
     ssrMode: !isBrowser,
     link: new HttpLink({

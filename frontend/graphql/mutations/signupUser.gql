@@ -1,0 +1,7 @@
+#import form '../fragments/user.gql'
+
+mutation signupUserMutation($name: String!, $email: String!){
+  signupUser(data: { name: $name, email: $email }){
+    ...UserFragment
+  }  
+}
